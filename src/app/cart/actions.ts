@@ -1,7 +1,7 @@
 
 'use server';
 
-import { getProductRecommendations } from '@/ai/flows/ai-product-recommendations';
+
 import type { CartItem } from '@/context/cart-context';
 import { getProducts, getAllProducts } from '@/lib/products';
 import { initializeServerSideFirebase } from '@/firebase/server-side';
