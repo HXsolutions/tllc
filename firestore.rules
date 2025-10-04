@@ -1,0 +1,81 @@
+/**
+ * @fileoverview Firestore Security Rules for the e-commerce application.
+ *
+ * Core Philosophy:
+ * This ruleset enforces a hybrid security model: public read access for product information and strict user-ownership for cart data.
+ *
+ * Data Structure:
+ * - /products/{productId}: Publicly readable product information.
+ * - /users/{userId}/cart/{cartItemId}: User-specific cart items, accessible only by the owning user.
+ *
+ * Key Security Decisions:
+ * - Public product listing: All products are publicly readable to facilitate browsing.
+ * - Strict cart ownership: Each user has exclusive access to their cart data.
+ *
+ * Denormalization for Authorization:
+ * - The cart items are located under the user id, to avoid needing to query for ownership.
+ */
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    /**
+     * @description Grants public read access to product information, but restricts writes to be denied.
+     * @path /products/{productId}
+     * @allow (get, list) Public access to read product details.
+     * @deny (create, update, delete) No write access is allowed.
+     * @principle Public read access for product information.
+     */
+    match /products/{productId} {
+      allow get: if true;
+      allow list: if true;
+      allow create: if false;
+      allow update: if false;
+      allow delete: if false;
+    }
+
+    /**
+     * @description Enforces strict user-ownership for cart items. Only the user can create, read, update, or delete items in their own cart.
+     * @path /users/{userId}/cart/{cartItemId}
+     * @allow (create) User 'user_abc' can create a cart item in their own cart.
+     * @allow (get, list, update, delete) User 'user_abc' can read, list, update and delete a cart item in their own cart.
+     * @deny (create, get, list, update, delete) User 'user_xyz' cannot access user 'user_abc' cart.
+     * @principle Enforces document ownership for all operations.
+     */
+    match /users/{userId}/cart/{cartItemId} {
+      allow get: if isSignedIn() && isOwner(userId);
+      allow list: if isSignedIn() && isOwner(userId);
+      allow create: if isSignedIn() && isOwner(userId);
+      allow update: if isSignedIn() && isExistingOwner(userId);
+      allow delete: if isSignedIn() && isExistingOwner(userId);
+    }
+
+    // ---- Helper functions ----
+
+    /**
+     * @description Checks if the user is signed in.
+     * @return {boolean} True if the user is signed in, false otherwise.
+     */
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    /**
+     * @description Checks if the user ID matches the authenticated user's ID.
+     * @param {string} userId The user ID to compare against.
+     * @return {boolean} True if the user ID matches, false otherwise.
+     */
+    function isOwner(userId) {
+      return request.auth.uid == userId;
+    }
+
+        /**
+     * @description Checks if the user ID matches the authenticated user's ID and the resource exists.
+     * @param {string} userId The user ID to compare against.
+     * @return {boolean} True if the user ID matches and the resource exists, false otherwise.
+     */
+    function isExistingOwner(userId) {
+      return isOwner(userId) && resource != null;
+    }
+  }
+}

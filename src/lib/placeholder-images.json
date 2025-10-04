@@ -1,0 +1,88 @@
+{
+  "placeholderImages": [
+    {
+      "id": "prod_001",
+      "description": "A white ceramic mug on a clean background.",
+      "imageUrl": "https://images.unsplash.com/photo-1495100497150-fe209c585f50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjZXJhbWljJTIwbXVnfGVufDB8fHx8MTc1OTM3OTEwOXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "ceramic mug"
+    },
+    {
+      "id": "prod_001",
+      "description": "Side view of a white ceramic mug.",
+      "imageUrl": "https://images.unsplash.com/photo-1649715985817-615afa0cdd1d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjZXJhbWljJTIwbXVnJTIwc2lkZXxlbnwwfHx8fDE3NTk0MTYyMzB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "ceramic mug side"
+    },
+    {
+      "id": "prod_001",
+      "description": "Top view of a white ceramic mug.",
+      "imageUrl": "https://images.unsplash.com/photo-1662190680482-8735d53d2b90?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjZXJhbWljJTIwbXVnJTIwdG9wfGVufDB8fHx8MTc1OTQxNjIzMHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "ceramic mug top"
+    },
+    {
+      "id": "prod_002",
+      "description": "A neutral-colored linen throw pillow on a sofa.",
+      "imageUrl": "https://images.unsplash.com/photo-1639813806536-11895df1ff64?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxsaW5lbiUyMHBpbGxvd3xlbnwwfHx8fDE3NTk0MTQ0MTN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "linen pillow"
+    },
+    {
+      "id": "prod_003",
+      "description": "A wooden desk organizer with pens and a notepad.",
+      "imageUrl": "https://images.unsplash.com/photo-1639917290489-4a4eb2a6aa3a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxkZXNrJTIwb3JnYW5pemVyfGVufDB8fHx8MTc1OTM2NzkwNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "desk organizer"
+    },
+    {
+      "id": "prod_004",
+      "description": "A soy wax candle in a glass jar with a soft glow.",
+      "imageUrl": "https://images.unsplash.com/photo-1620678835433-37a0ecb02a9f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHx3YXglMjBjYW5kbGV8ZW58MHx8fHwxNzU5NDE0NDEyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "wax candle"
+    },
+    {
+      "id": "prod_005",
+      "description": "A closed leather-bound journal on a wooden table.",
+      "imageUrl": "https://images.unsplash.com/photo-1654542645651-5196f4931cd6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxsZWF0aGVyJTIwam91cm5hbHxlbnwwfHx8fDE3NTk0MTQ0MTN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "leather journal"
+    },
+    {
+      "id": "prod_006",
+      "description": "A minimalist stainless steel water bottle.",
+      "imageUrl": "https://images.unsplash.com/photo-1724660579562-b17cb1172b93?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxzdGVlbCUyMGJvdHRsZXxlbnwwfHx8fDE3NTkzNDkwMjl8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageHint": "steel bottle"
+    },
+    {
+      "id": "prod_007",
+      "description": "A simple, elegant wall clock on a white wall.",
+      "imageUrl": "https://images.unsplash.com/photo-1707348102631-5a4c0a6eed6f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHx3YWxsJTIwY2xvY2t8ZW58MHx8fHwxNzU5MzMwMDA1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "wall clock"
+    },
+    {
+      "id": "prod_008",
+      "description": "An organic cotton tote bag hanging from a hook.",
+      "imageUrl": "https://images.unsplash.com/photo-1578237493287-8d4d2b03591a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx0b3RlJTIwYmFnfGVufDB8fHx8MTc1OTM0NTYyN3ww&ixlibrb-4.1.0&q=80&w=1080",
+      "imageHint": "tote bag"
+    },
+    {
+      "id": "prod_009",
+      "description": "A sleek matte black pen resting on a notebook.",
+      "imageUrl": "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxibGFjayUyMHBlbnxlbnwwfHx8fDE3NTk0MTQ0MTN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "black pen"
+    },
+    {
+      "id": "prod_010",
+      "description": "A small concrete planter with a green succulent.",
+      "imageUrl": "https://images.unsplash.com/photo-1745566589051-db20710ef1f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjb25jcmV0ZSUyMHBsYW50ZXJ8ZW58MHx8fHwxNzU5NDE0NDE0fDA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageHint": "concrete planter"
+    },
+    {
+      "id": "prod_011",
+      "description": "A soft gray cashmere beanie folded neatly.",
+      "imageUrl": "https://images.unsplash.com/photo-1739113181569-0758dcb28000?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjYXNobWVyZSUyMGJlYW5pZXxlbnwwfHx8fDE3NTk0MTQ0MTN8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageHint": "cashmere beanie"
+    },
+    {
+      "id": "prod_012",
+      "description": "A bottle of artisan olive oil with a modern label.",
+      "imageUrl": "https://images.unsplash.com/photo-1527756898251-203e9ce0d9c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxvbGl2ZSUyMG9pbHxlbnwwfHx8fDE3NTkzNzA5NjZ8MA&ixlib-rb-4.1.0&q=80&w=1080",
+      "imageHint": "olive oil"
+    }
+  ]
+}

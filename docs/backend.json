@@ -1,0 +1,122 @@
+{
+  "entities": {
+    "Product": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Product",
+      "type": "object",
+      "description": "Represents a product in the e-commerce store.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the product."
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the product."
+        },
+        "description": {
+          "type": "string",
+          "description": "Detailed description of the product."
+        },
+        "imageUrl": {
+          "type": "string",
+          "description": "URL of the product image.",
+          "format": "uri"
+        },
+        "price": {
+          "type": "number",
+          "description": "Price of the product."
+        },
+        "category": {
+          "type": "string",
+          "description": "Category the product belongs to."
+        },
+        "stockQuantity": {
+          "type": "number",
+          "description": "Number of units currently in stock."
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "description",
+        "imageUrl",
+        "price",
+        "category",
+        "stockQuantity"
+      ]
+    },
+    "CartItem": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "CartItem",
+      "type": "object",
+      "description": "Represents an item in the shopping cart.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the cart item."
+        },
+        "productId": {
+          "type": "string",
+          "description": "Reference to Product. (Relationship: Product 1:N CartItem)"
+        },
+        "quantity": {
+          "type": "number",
+          "description": "Quantity of the product in the cart."
+        }
+      },
+      "required": [
+        "id",
+        "productId",
+        "quantity"
+      ]
+    }
+  },
+  "auth": {
+    "providers": [
+      "password",
+      "anonymous"
+    ]
+  },
+  "firestore": {
+    "structure": [
+      {
+        "path": "/products/{productId}",
+        "definition": {
+          "entityName": "Product",
+          "schema": {
+            "$ref": "#/backend/entities/Product"
+          },
+          "description": "Stores product information. Implicitly public read access.",
+          "params": [
+            {
+              "name": "productId",
+              "description": "Unique identifier for the product."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/users/{userId}/cart/{cartItemId}",
+        "definition": {
+          "entityName": "CartItem",
+          "schema": {
+            "$ref": "#/backend/entities/CartItem"
+          },
+          "description": "Stores cart items for each user. Path-based ownership ensures only the user can access their cart. Homogeneous security posture.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "Unique identifier for the user."
+            },
+            {
+              "name": "cartItemId",
+              "description": "Unique identifier for the cart item."
+            }
+          ]
+        }
+      }
+    ],
+    "reasoning": "The data structure is designed to reflect the e-commerce application's needs, focusing on products and cart items. The key principle applied is authorization independence to ensure secure and scalable operations, achieved via denormalization where applicable. The structure separates data with different security postures. Specifically:\n\n1.  **/products/{productId}**: Stores product information.  No specific authorization requirements are specified for reading product information; all reads are implicitly public.\n2.  **/users/{userId}/cart/{cartItemId}**:  Cart items are stored under each user's document. This path-based ownership ensures that only the user can access their own cart data.  The `cart` subcollection ensures a homogeneous security posture, as all documents within belong to the specific user."
+  }
+}
